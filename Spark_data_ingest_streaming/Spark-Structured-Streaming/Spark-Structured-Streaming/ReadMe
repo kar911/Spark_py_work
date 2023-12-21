@@ -1,0 +1,14 @@
+Background
+-----------
+This is a streaming application where user is going to put the json file
+in the local directory /home/talentum/test-jupyter/Spark-Structured-Streaming/source
+and the spark streaming application is going to put the file on hdfs at 
+hdfs://localhost:9000/user/talentum/tmp/datalake/FaresRaw in a parquet format.
+
+Process - 
+----------
+1) From terminal 1 Run the Spark Streaming application(./run.sh)
+2) From terminal 2 copy the json file one at a time from home/talentum/test-jupyter/Spark-Structured-Streaming/zipcodes 
+to home/talentum/test-jupyter/Spark-Structured-Streaming/source
+3) For every copy of a json file in above step verify that a parquet file get generated at 
+hdfs://localhost:9000/user/talentum/tmp/datalake/FaresRaw. 
