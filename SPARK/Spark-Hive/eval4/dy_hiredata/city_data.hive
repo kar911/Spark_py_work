@@ -1,0 +1,6 @@
+-- Query to select records for a specific city
+
+set hivevar:cityName=${hiveconf:cityName};
+
+select * from dy_hiredata where city = '${hivevar:cityName}';
+

@@ -1,0 +1,12 @@
+
+-- Allowing Hive to dynamically handle partitions
+
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+
+-- Inserting data in table 'dy_hiredata' from another table 'hiredata'
+-- Only inserting distinct data and excluding header row 
+
+INSERT OVERWRITE TABLE dy_hiredata PARTITION (City)
+SELECT DISTINCT Country, Job_Name, Salary, City FROM hiredata WHERE NOT (City = 'City');
+

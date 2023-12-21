@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Author: Rishabh
+# Creation Date: 18/11/2023
+# Modified Date: 18/11/2023
+# Description:
+# This script create a table in Hive and load data into that table
+
+# Exit if a command returns non zero 
+set -e 
+
+# Execute DDL to create table
+
+hive -f create_table.hive
+
+# Load data into hiredata table
+
+hive -f load.hive
+
+

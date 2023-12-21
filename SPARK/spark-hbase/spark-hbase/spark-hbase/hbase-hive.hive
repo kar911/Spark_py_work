@@ -1,0 +1,21 @@
+--drop table if exists stocks_hbase;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS ${dbname}.stocks_hbase(
+ key string,
+ `date` string,
+ open string,
+ high string,
+ low string,
+ close string,
+ volume string,
+ adjClose string,
+ symbol string)
+ROW format serde 'org.apache.hadoop.hive.hbase.HBaseSerDe' 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler' 
+WITH SERDEPROPERTIES('hbase.columns.mapping' = ':key,info:date,info:open,info:high,info:low,info:close,info:volume,info:adjclose,info:symbol') 
+TBLPROPERTIES ('hbase.table.name' = 'stocks');
+
+select key, symbol, `date`, high, low from ${dbname}.stocks_hbase limit 10;
+
+select * from ${dbname}.stocks_hbase limit 10;
+

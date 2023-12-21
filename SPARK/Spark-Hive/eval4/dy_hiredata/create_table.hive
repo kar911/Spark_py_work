@@ -1,0 +1,7 @@
+--Delete table if it's already exits
+DROP TABLE IF EXISTS dy_hiredata;
+
+--Create table 'dy_hiredata' with OpenCSVSerde and partitioning by City
+
+CREATE TABLE dy_hiredata (Country STRING, Job_Name STRING, Salary INT) PARTITIONED BY (City STRING) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde';
+

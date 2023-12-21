@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+chmod 755 $(pwd)/eval4/script.hive
+$(pwd)/eval4/script.hive
+
+source ~/unset
+
+spark-submit spark_hire_data

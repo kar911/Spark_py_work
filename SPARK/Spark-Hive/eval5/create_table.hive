@@ -1,0 +1,22 @@
+-- Create a table Startups with LazySimpleSerde
+
+-- DROP TABLE IF EXISTS startups_lzySerde;
+-- CREATE TABLE startups_lzySerde (
+--    Incubation_Center STRING,
+--    Startup_name STRING,
+--    LOCATION STRING,
+--    SECTOR STRING)
+-- ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+
+
+-- Create the Startups table with specified columns with OpenCSVSerde
+
+DROP TABLE IF EXISTS startups;
+
+CREATE TABLE startups (
+    Incubation_Center STRING,
+    Startup_name STRING,
+    Location STRING,
+    Sector STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde';

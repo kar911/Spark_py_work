@@ -1,0 +1,5 @@
+-- Load data into hiredata table
+
+load data local inpath '/home/talentum/spark-jupyter/Spark-Hive/eval4/hire_data/*.csv' overwrite into table hiredata;
+
+

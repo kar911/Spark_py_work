@@ -1,0 +1,4 @@
+--This will remove the header from the table
+-- The 'skip.header.line.count' property will skip the specified number of lines (in this case, 1 for the header)
+
+ALTER TABLE startups SET TBLPROPERTIES("skip.header.line.count"="1");

@@ -1,0 +1,4 @@
+--Create a hive table named hiredata
+drop table if exists hiredata;
+
+create table hiredata (Country string, City string, Job_name string, Salary int) row format serde 'org.apache.hadoop.hive.serde2.OpenCSVSerde';

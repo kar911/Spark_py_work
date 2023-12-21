@@ -1,0 +1,4 @@
+-- Load the data in the table without the header line
+
+
+LOAD DATA INPATH '/user/hive/warehouse/Listofstartups.csv' OVERWRITE INTO TABLE startups;
